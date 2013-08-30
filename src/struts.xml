@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package namespace="/" name="blog" extends="struts-default">
+        <action name="Read" class="com.example.companyblog.ReadAction">
+            <result>/Read.jsp</result>
+        </action>
+        <action name="Post" class="com.example.companyblog.PostAction">
+            <result name="input">/Post.jsp</result>
+            <result name="success" type="redirectAction">Read</result>
+        </action>
+	</package>
+</struts>
